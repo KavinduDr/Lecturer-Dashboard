@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Software Project Admin
 
-## Getting Started
+An admin dashboard web app for managing quizzes and essay assessments, built with Next.js (14), React (18) and Tailwind CSS.
 
-First, run the development server:
+This repository contains a server-rendered and client-interactive Next.js application used to create and manage quizzes, view student results, and handle essay-type answers.
+
+## Key Features
+
+- Admin dashboard and routes for creating and editing quizzes and essays.
+- Student result views (per-quiz and per-student) and essay result pages.
+- Authentication-related pages: `signup`, `forgot-password`, `reset-password`, and `activate`.
+- Reusable UI primitives and Radix/NextUI-based components under `app/components/ui`.
+- Context providers for application state: `AdminContext`, `QuizContext`, `EssayContext`.
+
+## Project structure (high level)
+
+- `app/` — Next.js app routes and UI components.
+- `app/components/` — shared components and small UI modules.
+- `app/context/` — React context providers for app-wide state.
+- `app/dashboard`, `app/viewquiz`, `app/viewResult`, `app/viewEssayResult` — main feature areas for administration and reporting.
+- `public/` — static assets and images.
+
+## Requirements
+
+- Node.js 18 or later
+- npm (or yarn / pnpm)
+
+## Install & Run
+
+Install dependencies and run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Available npm scripts (from `package.json`):
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `dev` — run development server (next dev)
+- `build` — build production bundle (next build)
+- `start` — start production server (next start)
+- `lint` — run linter (next lint)
 
-## Learn More
+## Build & Production
 
-To learn more about Next.js, take a look at the following resources:
+Build the app for production and run it locally:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Notes for contributors
 
-## Deploy on Vercel
+- UI components live in `app/components/ui` — follow existing patterns when adding new primitives.
+- Context providers are in `app/context` — add or extend providers when new global state is required.
+- Keep styles consistent with Tailwind and existing design tokens in `tailwind.config.ts`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If you'd like, I can also add a CONTRIBUTING.md with PR guidelines and a small developer setup checklist.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+Original scaffolded README updated to reflect this project's structure and run instructions.
